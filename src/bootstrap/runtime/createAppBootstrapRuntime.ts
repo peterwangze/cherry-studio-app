@@ -236,6 +236,7 @@ export function createAppBootstrapRuntime(
       pluginConnections: {
         listConnections: () => services.mcpRuntime.pluginAuthorizations.listConnections(),
       },
+      presetMessages: services.presetMessage,
       providers: services.provider,
       skillAvailability: dataApiDependencies.skillAvailability,
       skillInstructions: dataApiDependencies.skillInstructions,

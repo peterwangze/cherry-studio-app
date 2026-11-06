@@ -15,6 +15,7 @@ import { paintingTable } from './painting';
 import { paintingBoardTable } from './paintingBoard';
 import { pluginAuthorizationTable } from './pluginAuthorization';
 import { preferenceTable } from './preference';
+import { presetMessageTable } from './presetMessage';
 import { userModelTable } from './userModel';
 import { userProviderTable } from './userProvider';
 
@@ -32,6 +33,7 @@ export * from './mcpServer';
 export * from './painting';
 export * from './paintingBoard';
 export * from './pluginAuthorization';
+export * from './presetMessage';
 export * from './userModel';
 export * from './userProvider';
 
@@ -66,6 +68,7 @@ export const schema = {
   paintingTable,
   paintingBoardTable,
   preferenceTable,
+  presetMessageTable,
   userModelTable,
   userProviderTable,
 };

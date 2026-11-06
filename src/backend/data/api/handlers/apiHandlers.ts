@@ -14,6 +14,7 @@ import type { JobService } from '../../services/JobService';
 import type { McpServerService } from '../../services/McpServerService';
 import type { PaintingService } from '../../services/PaintingService';
 import type { PluginAuthorizationService } from '../../services/PluginAuthorizationService';
+import type { PresetMessageService } from '../../services/PresetMessageService';
 import type { ProviderService } from '../../services/ProviderService';
 import type { TrashService } from '../../services/TrashService';
 import { type AgentAvatars, createAgentHandlers } from './agents';
@@ -29,6 +30,7 @@ import { createModelHandlers, type SystemModelSupportFilter } from './models';
 import { createPaintingHandlers } from './paintings';
 import { createPluginCatalogHandlers, type PluginCatalogReader } from './pluginCatalog';
 import { createPluginConnectionHandlers } from './pluginConnections';
+import { createPresetMessageHandlers } from './presetMessages';
 import { createProviderHandlers, type ProviderAccountCleanup } from './providers';
 import { createSearchHandlers } from './search';
 import {
@@ -63,6 +65,7 @@ export type DataApiDependencies = {
   systemModelSupport: SystemModelSupportFilter;
   paintings: PaintingService;
   pluginCatalog: PluginCatalogReader;
+  presetMessages: PresetMessageService;
   pluginConnections: Pick<PluginAuthorizationService, 'listConnections'>;
   providers: ProviderService;
   providerAccounts: ProviderAccountCleanup;
@@ -87,6 +90,7 @@ export function createDataApiHandlers(dependencies: DataApiDependencies): ApiImp
     ...createPaintingHandlers(dependencies.paintings),
     ...createPluginCatalogHandlers(dependencies.pluginCatalog),
     ...createPluginConnectionHandlers(dependencies.pluginConnections),
+    ...createPresetMessageHandlers(dependencies.presetMessages),
     ...createProviderHandlers(dependencies.providers, dependencies.providerAccounts),
     ...createSearchHandlers(dependencies.contentSearch, dependencies.entitySearch),
     ...createSkillHandlers(

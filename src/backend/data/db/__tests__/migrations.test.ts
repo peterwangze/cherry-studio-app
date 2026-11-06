@@ -747,6 +747,7 @@ describe('bundled SQLite migrations', () => {
         'painting_board',
         'plugin_authorization',
         'preference',
+        'preset_message',
         'user_model',
         'user_provider',
       ]);

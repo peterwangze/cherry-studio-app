@@ -15,6 +15,7 @@ import { mcpServerService } from '@/backend/data/services/McpServerService';
 import { modelService } from '@/backend/data/services/ModelService';
 import { paintingService } from '@/backend/data/services/PaintingService';
 import { pluginAuthorizationService } from '@/backend/data/services/PluginAuthorizationService';
+import { presetMessageService } from '@/backend/data/services/PresetMessageService';
 import { providerService } from '@/backend/data/services/ProviderService';
 
 export type DataServices = ReturnType<typeof createDataServices>;
@@ -54,6 +55,7 @@ export function createDataServices({
     painting: paintingService,
     pluginAuthorization: pluginAuthorizationService,
     preference,
+    presetMessage: presetMessageService,
     provider: providerService,
   };
 }

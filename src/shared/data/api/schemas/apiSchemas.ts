@@ -11,6 +11,7 @@ import type { ModelSchemas } from './models';
 import type { PaintingSchemas } from './paintings';
 import type { PluginCatalogSchemas } from './pluginCatalog';
 import type { PluginConnectionSchemas } from './pluginConnections';
+import type { PresetMessageSchemas } from './presetMessages';
 import type { ProviderSchemas } from './providers';
 import type { SearchSchemas } from './search';
 import type { SkillSchemas } from './skills';
@@ -30,6 +31,7 @@ export type ApiSchemas = TrashSchemas &
   PaintingSchemas &
   PluginCatalogSchemas &
   PluginConnectionSchemas &
+  PresetMessageSchemas &
   ProviderSchemas &
   SearchSchemas &
   SkillSchemas;
