@@ -1,4 +1,5 @@
 import BoxesIcon from '@cherrystudio/app-icons/icons/boxes';
+import MessageSquareTextIcon from '@cherrystudio/app-icons/icons/message-square-text';
 import ToolCaseIcon from '@cherrystudio/app-icons/icons/tool-case';
 import { Composer, Image, useToast } from '@cherrystudio/ui/components';
 import { type RefObject, useState } from 'react';
@@ -17,12 +18,14 @@ const logger = loggerService.withContext('ChatInputMenu');
 export function ChatInputMenu({
   media = 'all',
   onPickPlugins,
+  onPickPresetMessages,
   onPickPrompts,
   onPickSkills,
   triggerRef,
 }: {
   media?: 'all' | 'images';
   onPickPlugins?: () => void;
+  onPickPresetMessages?: () => void;
   onPickPrompts?: () => void;
   onPickSkills?: () => void;
   triggerRef: RefObject<ViewInstance | null>;
@@ -72,6 +75,14 @@ export function ChatInputMenu({
             label={t('skills.title')}
             onPress={onPickSkills}
             testID="chat-composer-skills"
+          />
+        ) : null}
+        {onPickPresetMessages ? (
+          <Composer.Menu.Item
+            icon={<MessageSquareTextIcon className="size-5 text-foreground" />}
+            label={t('chat.presetMessages.title')}
+            onPress={onPickPresetMessages}
+            testID="chat-composer-preset-messages"
           />
         ) : null}
       </ComposerMenu>

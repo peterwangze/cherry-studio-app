@@ -33,6 +33,9 @@ jest.mock('@/frontend/hooks/plugin', () => ({
   usePluginCatalog: () => ({}),
   usePluginConnections: () => ({}),
 }));
+jest.mock('@/frontend/hooks/presetMessage/usePresetMessages', () => ({
+  usePresetMessagesApi: () => ({ presetMessages: [] }),
+}));
 jest.mock('@/frontend/components/Composer', () => ({
   ComposerAttachments: () => null,
   useComposerActions: () => ({ setDraft: mockNoop }),
@@ -74,9 +77,13 @@ jest.mock('../components/ChatInputQueue', () => ({ ChatInputQueue: () => null })
 jest.mock('../components/ChatInputPluginPopover', () => ({
   ChatInputPluginPopover: ({ children }: { children: ReactNode }) => children,
 }));
+jest.mock('../components/ChatInputPresetMessagePopover', () => ({
+  ChatInputPresetMessagePopover: ({ children }: { children: ReactNode }) => children,
+}));
 jest.mock('../components/ChatInputPromptPopover', () => ({
   ChatInputPromptPopover: ({ children }: { children: ReactNode }) => children,
 }));
+jest.mock('../components/ComposerDirectSend', () => ({ ComposerDirectSend: () => null }));
 jest.mock('../components/ChatInputSkillPopover', () => ({
   ChatInputSkillPopover: ({ children }: { children: ReactNode }) => children,
 }));

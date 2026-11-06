@@ -4,6 +4,7 @@ import CloudIcon from '@cherrystudio/app-icons/icons/cloud';
 import DatabaseIcon from '@cherrystudio/app-icons/icons/database';
 import InfoIcon from '@cherrystudio/app-icons/icons/info';
 import LockIcon from '@cherrystudio/app-icons/icons/lock';
+import MessageSquareTextIcon from '@cherrystudio/app-icons/icons/message-square-text';
 import MicIcon from '@cherrystudio/app-icons/icons/mic';
 import NetworkIcon from '@cherrystudio/app-icons/icons/network';
 import PackageIcon from '@cherrystudio/app-icons/icons/package';
@@ -76,6 +77,12 @@ export default function SettingsScreen() {
               leading={<MicIcon className="size-4 text-foreground" />}
               onPress={() => router.push('/settings/voice')}
               testID="settings-voice"
+            />
+            <Section.Item
+              label={t('settings.items.presetMessages')}
+              leading={<MessageSquareTextIcon className="size-4 text-foreground" />}
+              onPress={() => router.push('/settings/preset-messages')}
+              testID="settings-preset-messages"
             />
             {Platform.OS === 'ios' || Platform.OS === 'android' ? (
               <Section.Item

@@ -19,6 +19,7 @@ export type {
   ComposerToolbarProps,
 } from './composer.types';
 export { useComposerDockLayout } from './hooks/use-composer-dock-layout';
+export { useComposerActions } from './hooks/use-composer-context';
 export { COMPOSER_MAX_TEXT_HEIGHT } from './utils/composer-layout';
 export {
   composerContentGap,
